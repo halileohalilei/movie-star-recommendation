@@ -1,0 +1,24 @@
+{
+  "name": "movie-star-recommendation",
+  "version": "1.0.0",
+  "description": "a system for movie star recommendation based on common interests",
+  "main": "server/server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "raccoon": "^0.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halileohalilei/movie-star-recommendation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halileohalilei/movie-star-recommendation/issues"
+  },
+  "homepage": "https://github.com/halileohalilei/movie-star-recommendation#readme"
+}
