@@ -10,11 +10,17 @@ app.get('/people', function (req, res) {
   var page = query.page;
   var per = query.per;
 
-  var resString = 'Requesting page: ';
-  resString = resString + (typeof page != 'undefined' ? page : '0')
-  resString = resString + ' per: ' + (typeof per != 'undefined' ? per : '24')
+  if (typeof page == 'undefined') page = 0;
+  if (typeof per == 'undefined') per = 24;
 
-  res.send(resString);
+  var sqlite3 = require('sqlite3').verbose();
+  var db = new sqlite3.Database('./movie_star_data.sqlite');
+
+  db.all("SELECT * from people limit " + per + " offset " + per * page, function(err, rows) {
+    //rows contain values while errors, well you can figure out.
+    res.send(rows);
+  });
+  db.close();
 });
 
 app.listen(3000, function () {
